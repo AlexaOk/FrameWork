@@ -2,8 +2,17 @@
 
 use \Core\Router;
 
-Router::connect('/', ['controller' => 'App', 'action' => 'index']);
+Router::connect('/', ['controller' => 'AppController', 'action' => 'index']);
 Router::connect('/user', ['controller' => 'UserController', 'action' => 'index']);
 Router::connect('/user/add', ['controller' => 'UserController', 'action' => 'add']);
-Router::connect('/UserController/registerAction', ['controller' => 'UserController', 'action' => 'registerAction'] );
+Router::connect('/user/register', ['controller' => 'UserController', 'action' => 'registerAction'] );
+Router::connect('/user/log', ['controller' => 'UserController', 'action' => 'log'] );
+Router::connect('/user/logout', ['controller' => 'UserController', 'action' => 'logout'] );
+Router::connect('/film/list', ['controller' => 'FilmController', 'action' => 'list'] );
+Router::connect('/film/details', ['controller' => 'FilmController', 'action' => 'details'] );
+Router::connect('/film/add', ['controller' => 'FilmController', 'action' => 'addForm'] );
+Router::connect('/film/register', ['controller' => 'FilmController', 'action' => 'registerAction'] );
+Router::connect('/film/delete', ['controller' => 'FilmController', 'action' => 'deleteMovie'] );
+Router::connect('/film/modify', ['controller' => 'FilmController', 'action' => 'modifyForm'] );
+Router::connect('/film/movieUpdate', ['controller' => 'FilmController', 'action' => 'modifyResum'] );
  ?>

@@ -6,18 +6,52 @@ Use \Model\UserModel;
 Use \Core\Database;
 use PDO;
 use \Core\Request;
+Use \Core\ORM;
 
 class UserController extends Controller
 {
   public function add()
   {
-      $this->render('register');
+    $this->render('register');
+  }
+  public function index()
+  {
+    $this->render('index');
   }
   public function registerAction()
   {
-      $register = new UserModel();
-      $register->save($_POST["mail"],$_POST["password"]);
-      // var_dump($this->request);
+    $register = new UserModel($this->param);
+    $this->id=$register->save();
+    $_SESSION['id']=$this->id;
+    $this->render('index');
+  }
+
+  public function log()
+  {
+    if(!empty($_POST["email"]) && !empty($_POST["password"]))
+    {
+      $log = new UserModel($this->param);
+      if($this->id=$log->login())
+      {
+        $this->render('index', [
+          "userInfos"=>$log->getInfos()
+        ]);
+        $_SESSION['id']=$this->id;
+      }
+      elseif($log->login()==false)
+      {
+        $this->render('login');
+      }
+    }
+    else
+    {
+      $this->render('login');
+    }
+  }
+  public function logout()
+  {
+    $logout=new UserModel($this->param);
+    $this->render('login');
   }
 }
 ?>

@@ -8,7 +8,7 @@ class Database
   {
     try
     {
-      $bdd = new PDO('mysql:host=localhost;dbname=pie_database;charset=utf8', 'root', '');
+      $bdd = new PDO('mysql:host=localhost;dbname=epitech_tp;charset=utf8', 'root', '');
       return $bdd;
     }
     catch (Exception $e)

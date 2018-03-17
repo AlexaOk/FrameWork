@@ -18,13 +18,13 @@ class Core
     }
     array_shift($array);
     $uri='/'.implode('/', $array);
-    echo '<pre>';
+//    echo '<pre>';
 
-    $z=Router::get($uri);
-    var_dump($z);
+    $router=Router::get($uri);
+  //  var_dump($router);
 //    $z->Router::get();
 
-return $z;
+return $router;
   }
 }
  ?>

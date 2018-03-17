@@ -1,7 +1,3 @@
-<?php
-$_SESSION['name']=$userInfos['name'];
- ?>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
 
@@ -12,6 +8,7 @@ $_SESSION['name']=$userInfos['name'];
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -20,30 +17,18 @@ $_SESSION['name']=$userInfos['name'];
         <li><a href="#">Genres</a></li>
         <li><a href="#">Historique</a></li>
       </ul>
-      <form id="signin" action="/PiePHP/user/log" class="navbar-form navbar-right" role="form">
+      <form id="signin" action="/PiePHP/user/logout" class="navbar-form navbar-right" role="form">
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <?php echo $userInfos['name'];?>
+            <?php if(isset($_SESSION['name'])){echo $_SESSION['name'];};?>
         </div>
         <button type="submit" class="btn btn-primary"> <?php if (isset($_SESSION['name'])){echo "Logout";} else {echo "Login";}?></button>
       </form>
     </div>
   </div>
 </nav>
-<div class="newaccount">
-  <h3>Bienvenue <?php echo $userInfos['name'];?> ! </h3>
-</div>
-<div class = "images">
-<img id="img" src="..\webroot\assets\avatar.jpg"/>
-<img id="img" src="..\webroot\assets\badtrip.jpg"/>
-<img id="img" src="..\webroot\assets\chtis.jpg"/>
-<img id="img" src="..\webroot\assets\gladiator.jpg"/>
-<img id="img" src="..\webroot\assets\life.jpg"/>
-<img id="img" src="..\webroot\assets\matrix.jpg"/>
-<img id="img" src="..\webroot\assets\anneaux.jpg"/>
-<img id="img" src="..\webroot\assets\avengers.jpg"/>
-<img id="img" src="..\webroot\assets\intouchable.jpg"/>
-<img id="img" src="..\webroot\assets\safari.jpg"/>
-</div>
+
+
+<p>Votre film a été ajouté !</p>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,7 @@
   <title>PiePHP</title>
 </head>
 <body>
-  <pre>$_POST : <?php print_r($_POST) ;?> $_GET : <?php print_r($_GET); ?> $_SERVER : <?php print_r($_SERVER); ?></pre>
+
 </body>
 </html>
 
@@ -18,6 +19,7 @@ use Core\Core;
     $app = new Core();
     $arr = $app->run();
 
-    $cont = new Controller\UserController();
-    $cont-> {$arr['action']}();
+    $cont = "Controller\\".$arr['controller'];
+    $controller=new $cont;
+    $controller->{$arr['action']}();
 ?>

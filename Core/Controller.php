@@ -6,11 +6,14 @@ use Core\Request;
 
 Class Controller
 {
-private static $_render;
-
+  private static $_render;
+  public $model;
   public function __construct()
   {
-   $this->request=new Request();
+   $this->param=new Request();
+   //$this->model = str_replace('Controller', 'Model', get_class($this));
+   //$this->model = new $this->model($this->params);
+   //var_dump($this->param);
   }
 
   protected function render($view, $scope = [])
