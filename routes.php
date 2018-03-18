@@ -17,6 +17,6 @@ Router::connect('/film/details', ['controller' => 'FilmController', 'action' => 
 Router::connect('/film/add', ['controller' => 'FilmController', 'action' => 'addForm'] );
 Router::connect('/film/register', ['controller' => 'FilmController', 'action' => 'registerAction'] );
 Router::connect('/film/delete', ['controller' => 'FilmController', 'action' => 'deleteMovie'] );
-Router::connect('/film/modify', ['controller' => 'FilmController', 'action' => 'modify'] );
+Router::connect('/film/modify', ['controller' => 'FilmController', 'action' => 'modifyForm'] );
 Router::connect('/film/movieUpdate', ['controller' => 'FilmController', 'action' => 'modifyResum'] );
  ?>

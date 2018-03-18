@@ -53,6 +53,7 @@ class FilmController extends Controller
     $movie = new FilmModel($this->param);
     $movie->id=$_POST['id'];
     $movie->modify();
+  //  var_dump($movie->id);
     $this->render('modifySuccess');
   }
 }

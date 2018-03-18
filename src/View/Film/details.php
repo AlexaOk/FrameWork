@@ -16,15 +16,13 @@
         <li><a href="/PiePHP/film/list">Films</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Historique</a></li>
-        <li><a href="/PiePHP/user/infos">Voir mon Profil</a></li>
-        <li><a href="/PiePHP/user/modify">Modifier mon Profil</a></li>
       </ul>
       <form id="signin" action="/PiePHP/user/logout" class="navbar-form navbar-right" role="form">
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <?php if(isset($_SESSION['name'])){echo $_SESSION['name'];};?>
+          <?php echo $_SESSION['name'];?>
         </div>
-        <button type="submit" class="btn btn-primary"> <?php if (isset($_SESSION['name'])){echo "Logout";} else {echo "Login";}?></button>
+          <button type="submit" class="btn btn-primary"> <?php if (isset($_SESSION['name'])){echo "Logout";} else {echo "Login";}?></button>
       </form>
     </div>
   </div>
@@ -37,17 +35,12 @@
 
         <th>Titre<br>
         <form action="/PiePHP/film/delete" method="POST" >
-          <?php if (isset($_SESSION['name'])){echo'
-        <button value="<?php   foreach ($details as $key => $value) { echo $value[\'id\'];} ?>" name="id"  role="button" class="btn btn-danger">Supprimer ce film</button>';
-      }?>
+        <button value="<?php   foreach ($details as $key => $value) { echo $value['id'];} ?>" name="id"  role="button" class="btn btn-danger">Supprimer ce film</button>
         </form>
         </th>
         <th>Résumé<br>
         <form action="/PiePHP/film/modify" method="POST">
-        <?php if (isset($_SESSION['name'])){echo'
-        <button  value="<?php   foreach ($details as $key => $value) { echo $value[\'id\'];} ?>" name="id" role="button" class="btn btn-info">Modifier</button>';
-      }?>
-        </th>
+        <button  value="<?php   foreach ($details as $key => $value) { echo $value['id'];} ?>" name="id" role="button" class="btn btn-info">Modifier</button></th>
         </form>
         <th>Année de Production</th>
         <th>Duree</th>

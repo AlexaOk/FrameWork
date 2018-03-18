@@ -22,7 +22,7 @@
       <form id="signin" action="/PiePHP/user/logout" class="navbar-form navbar-right" role="form">
         <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <?php if(isset($_SESSION['name'])){echo $_SESSION['name'];};?>
+            <?php if(isset($_SESSION['name'])) {echo $_SESSION['name'];}?>
         </div>
         <button type="submit" class="btn btn-primary"> <?php if (isset($_SESSION['name'])){echo "Logout";} else {echo "Login";}?></button>
       </form>

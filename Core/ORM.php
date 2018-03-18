@@ -56,6 +56,7 @@ class ORM
     try {
       $reponse = $this->bdd->prepare("UPDATE $table SET $req  WHERE id='$id'");
       $reponse->execute();
+  //    var_dump($reponse);
     }
     catch (Exception $e)
     {
