@@ -73,5 +73,13 @@ class UserController extends Controller
     $account->remove();
     $this->render('delete');
   }
+  public function details()
+  {
+    $detail=new UserModel($this->param);
+    $detail->id = $detail->getInfosByName();
+    $this->render('details', [
+      "details"=>$detail->readOne()
+    ]);
+  }
 }
 ?>

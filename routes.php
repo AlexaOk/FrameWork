@@ -10,6 +10,7 @@ Router::connect('/user/log', ['controller' => 'UserController', 'action' => 'log
 Router::connect('/user/logout', ['controller' => 'UserController', 'action' => 'logout'] );
 Router::connect('/user/delete', ['controller' => 'UserController', 'action' => 'deleteAccount'] );
 Router::connect('/user/modify', ['controller' => 'UserController', 'action' => 'modify'] );
+Router::connect('/user/infos', ['controller' => 'UserController', 'action' => 'details'] );
 Router::connect('/user/modifySuccess', ['controller' => 'UserController', 'action' => 'modifyInfos'] );
 Router::connect('/film/list', ['controller' => 'FilmController', 'action' => 'list'] );
 Router::connect('/film/details', ['controller' => 'FilmController', 'action' => 'details'] );

@@ -19,6 +19,7 @@ $_SESSION['name']=$userInfos['name'];
         <li><a href="/PiePHP/film/list">Films</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Historique</a></li>
+        <li><a href="/PiePHP/user/infos">Voir mon Profil</a></li>
         <li><a href="/PiePHP/user/modify">Modifier mon Profil</a></li>
       </ul>
       <form id="signin" action="/PiePHP/user/log" class="navbar-form navbar-right" role="form">

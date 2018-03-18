@@ -1,3 +1,8 @@
+<?php
+session_unset();
+session_destroy();
+?>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
 
@@ -8,10 +13,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MyCinema</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+          <li><a class="navbar-brand" href="/piePHP/">MyCinema</a></li>
         <li><a href="/piePHP/film/list">Films</a></li>
         <li><a href="#">Genres</a></li>
         <li><a href="#">Historique</a></li>
