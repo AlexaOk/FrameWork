@@ -45,5 +45,19 @@ class UserModel extends Entity
       }
     }
   }
+  public function getInfosByName()
+    {
+      $bdd = Database::connect();
+      $name=$_SESSION["name"];
+      $reponse = $bdd->prepare("SELECT * FROM users WHERE name = '$name'");
+      if($reponse->execute())
+      {
+        while ($row = $reponse->fetch())
+        {
+          if($name == $row['name'])
+          return $row['id'];
+        }
+      }
+    }
 }
 ?>

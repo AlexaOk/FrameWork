@@ -23,7 +23,9 @@ class UserController extends Controller
     $register = new UserModel($this->param);
     $this->id=$register->save();
     $_SESSION['id']=$this->id;
-    $this->render('index');
+    $this->render('index', [
+      "userInfos"=>$register->getInfos()
+    ]);
   }
 
   public function log()
@@ -52,6 +54,24 @@ class UserController extends Controller
   {
     $logout=new UserModel($this->param);
     $this->render('login');
+  }
+  public function modify()
+  {
+    $this->render('modifyForm');
+  }
+  public function modifyInfos()
+  {
+    $modif=new UserModel($this->param);
+    $modif->id=$modif-> getInfosByName();
+    $modif->modify();
+    $this->render('modifySuccess');
+  }
+  public function deleteAccount()
+  {
+    $account = new UserModel($this->param);
+    $account->id=$account->getInfosByName();
+    $account->remove();
+    $this->render('delete');
   }
 }
 ?>
